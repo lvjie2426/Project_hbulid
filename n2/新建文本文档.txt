@@ -1,0 +1,60 @@
+CREATE TABLE pet(
+ name varchar(20)
+);
+
+insert into pet2 values('哈士奇','公','2019',null);
+create table students(
+St_num varchar(10),
+stud_class varchar(20),
+profession varchar(15),
+grade(int),
+sex char（2);
+
+create table tbl_student(
+jno varchar(10),
+name varchar(5),
+sex char(2),
+grade INT,
+profession varchar(15),
+brith date,
+school_time Date);
+
+
+1.查看所有数据库 show databases;
+2.选择库   use database_name（数据库名） 返回选中库
+3.查看库中所有表 show tables;
+3.1 创建表 create table table_name (name varchar(20),gread int, brith date);
+3.2 删除库/表 drop database database_name/ drop table table_name;
+DML
+--增 
+insert into table_name valus(name varcahr(10), gread int);
+--删
+delete from table_name where name='xxx';
+--改
+update table_name set name='xxx',gread=xx where name='xx';
+--查
+select * from table_name where name='xx'；
+
+创建主键&自增
+--一般 创建表格 create table tbl_01(id varchar(10), name varchar(8),Day date,type varchar(8));
+
+-- 创建表格直接附带约束（主键约束） create table tbl_01(
+id varchar(10) primary key, //直接设置 给 id设置主键约束- 有且仅有一个 确立整行信息的唯一性
+name varchar(8),
+Day date,type varchar(8)
+);
+
+-- 创建表格直接附带约束（主键约束） create table tbl_01(
+id varchar(10), //直接设置 给 id设置主键约束
+name varchar(8),
+Day date,type varchar(8)
+primary key(id,name)---联合主键 判断条件（两个两个条件相加的结果不重复，）
+);
+
+
+SELECT *
+INTO tbl_s2
+FROM tbl_student;
+
+ALTER TABLE tbl_s2
+ADD UNIQUE KEY(brith);
